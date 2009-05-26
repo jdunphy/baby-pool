@@ -15,9 +15,9 @@
   .row
     %label{:for => 'date'} Birth Date:
     %select#date{:name => "month"}
-      = month_options
+      = month_options(@guess.birth_date.month)
     %select{:name => "day"}
-      = day_options
+      = day_options(@guess.birth_date.day)
     %span 2009
   .row
     %button{:type => "submit"} Submit your guess!

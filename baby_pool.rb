@@ -36,19 +36,24 @@ class BabyPool < Sinatra::Base
   end
 
   helpers do
-    def month_options
+
+    def selected(current, selection)
+      current == selection ? "selected" : ""
+    end
+    
+    def month_options(selection = nil)
       out = ""
       {6 => "Jun", 7 => "Jul", 8 => "Aug" }.
         each do |num, month|
-        out << "<option value='#{num}'>#{month}</option>\n"
+        out << "<option value='#{num}' #{selected(num, selection)}>#{month}</option>\n"
       end
       out
     end
 
-    def day_options
+    def day_options(selection = nil)
       out = ""
       (1..31).each do |day|
-        out << "<option>#{day}</option>\n"
+        out << "<option #{selected(day,selection)}>#{day}</option>\n"
       end
       out
     end
