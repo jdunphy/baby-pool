@@ -13,7 +13,6 @@ class BabyPool < Sinatra::Base
     ::DB = Sequel.sqlite(dbfile)
     DBUtils.setup_db
     require File.dirname(__FILE__) + '/lib/models'
-    puts "GO GO GO"
   end
 
   get '/' do
