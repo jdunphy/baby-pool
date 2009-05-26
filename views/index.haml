@@ -1,0 +1,38 @@
+!!!
+%html{html_attrs}
+  %head
+    %link{:rel => "stylesheet", :href => "/css/screen.css", :type =>"text/css", :media => "screen"}
+    %title
+      The Official Elliot James Dunphy Pool
+  %body
+    .main
+      %h1 The Official Elliot James Dunphy Pool
+      .panel.top
+        %h3 What do I do?
+        %ol
+          %li Guess when Elliot will be born
+          %li Send us two bucks
+          %li Wait...
+          %li Win??
+      .panel.top
+        %h3 What are the rules?
+        %ul
+          %li Each day that your guess is off by is one point.
+          %li Each ounch that your guess is off by is one point.
+          %li The guesser with the lowest points gets the sweet, sweet cash.
+      .clear &nbsp;
+
+      .guess-panel.panel
+        %h3 Take a guess!
+      
+        - if @guess
+          = haml :error_form, :layout => false
+        - else
+          = haml :new_form, :layout => false
+
+      .previous-guessers.panel
+        %h3 Who has already guessed?
+        %ul
+          - @guesses.each do |guess|
+            %li= guess.name
+    

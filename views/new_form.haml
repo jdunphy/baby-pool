@@ -1,0 +1,18 @@
+%form#new_post{:action => '/guesses', :method => 'post'}
+  .row
+    %label{:for => "name"} What's your name?
+    %input#name{:name => "guess[name]", :size => 30}
+  .row    
+    %label{:for => "pounds"} Pounds:
+    %input#pounds{:name => "guess[pounds]", :size => 2}
+    %label{:for => "ounces"} Ounces:
+    %input#ounces{:name => "guess[ounces]", :size => 2}
+  .row
+    %label{:for => 'date'} Birth Date:
+    %select#date{:name => "month"}
+      = month_options
+    %select{:name => "day"}
+      = day_options
+    %span 2009
+  .row
+    %button{:type => "submit"} Submit your guess!

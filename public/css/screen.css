@@ -1,0 +1,41 @@
+body {font-size:75%;
+      color:#222;
+      background:#fff;
+      font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
+h1 {font-size:3em;line-height:1;margin-bottom:0.5em;}
+h2 {font-size:2em;margin-bottom:0.75em;}
+h3 {font-size:1.5em;line-height:1;margin-bottom:.3em;
+    border-bottom: 1px dotted #BBB;}
+
+.main {
+    width: 800px;
+}
+
+.panel {
+    margin: 5px;
+    padding: 5px;
+    border: solid #BBB;
+    float: left;
+}
+
+.guess-panel {
+    width: 400px;
+}
+
+.previous-guessers {
+    width: 300px;
+}
+
+.top {
+    width: 350px;
+}
+
+.clear { clear: both }
+
+.row { line-height: 1.8em; }
+
+.error {
+    font-size: 1.1em;
+    color: #900;
+}

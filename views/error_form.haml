@@ -1,0 +1,23 @@
+.error 
+  Oh no!  Your guess had errors!
+  %ul
+    - @guess.errors.full_messages.each do |err|
+      %li= err
+%form#new_post{:action => '/guesses', :method => 'post'}
+  .row
+    %label{:for => "name"} What's your name?
+    %input#name{:name => "guess[name]", :size => 30, :value => @guess.name}
+  .row    
+    %label{:for => "pounds"} Pounds:
+    %input#pounds{:name => "guess[pounds]", :size => 2, :value => @guess.pounds}
+    %label{:for => "ounces"} Ounces:
+    %input#ounces{:name => "guess[ounces]", :size => 2, :value => @guess.ounces}
+  .row
+    %label{:for => 'date'} Birth Date:
+    %select#date{:name => "month"}
+      = month_options
+    %select{:name => "day"}
+      = day_options
+    %span 2009
+  .row
+    %button{:type => "submit"} Submit your guess!
