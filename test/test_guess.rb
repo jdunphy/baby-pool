@@ -12,6 +12,13 @@ class TestGuess < Test::Unit::TestCase
     assert !g.valid?
   end
 
+  def test_name_should_be_unique
+    valid_guess.save
+    g = valid_guess
+    assert !g.valid?
+    assert g.errors.on(:name)
+  end
+
   def test_guess_should_validate_ounces
     g = valid_guess(:ounces => "string")
     assert !g.valid?

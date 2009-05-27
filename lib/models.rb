@@ -3,6 +3,7 @@ class Guess < Sequel::Model
 
   validates do
     presence_of :name, :pounds, :ounces
+    uniqueness_of :name
     numericality_of :pounds, :ounces, :message => ' must be a number'
   end
 

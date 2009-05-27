@@ -14,7 +14,9 @@
             %a{:href => "http://www.flickr.com/photos/57179629@N00/sets/72157618803263336/"} Go do some research
             (Est. due date: 07/09/09)
           %li Guess when Elliot will be born
-          %li Send us two bucks
+          %li 
+            Mail us two bucks per entry
+            %a{:href => "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5719552"}Paypal Works Too!
           %li Wait...
           %li Win??
       .panel.top
@@ -39,3 +41,7 @@
           - @guesses.each do |guess|
             %li= guess.name
     
+      .previous-guessers.panel
+        Got questions or problems?  Did I do something silly and make a busted website?  Email me!
+        %br
+        jacob (dot) dunphy (at) gmail.com
