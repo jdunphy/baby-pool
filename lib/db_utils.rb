@@ -6,6 +6,7 @@ module DBUtils
       ::DB.create_table(:guesses) do
         primary_key :id
         varchar :name
+        varchar :email
         Number :pounds
         Number :ounces
         DateTime :birth_date

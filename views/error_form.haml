@@ -20,4 +20,7 @@
       = day_options(@guess.birth_date.day)
     %span 2009
   .row
+    %label{:for => 'email'} Email (optional):
+    %input#email{:name => "guess[email]", :value => @guess.email}
+  .row
     %button{:type => "submit"} Submit your guess!
