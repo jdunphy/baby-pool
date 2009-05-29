@@ -9,7 +9,7 @@ class BabyPool < Sinatra::Base
   configure do
     env = defined?(environment) ? environment : :development
     if ENV['DATABASE_URL'] 
-      ::DB = Sequel.sqlite(ENV['DATABASE_URL'])
+      ::DB = Sequel.connect(ENV['DATABASE_URL'])
     else
       dbfile = File.dirname(__FILE__) + "/db/#{env}.sqlite3"
       FileUtils.touch(dbfile)
