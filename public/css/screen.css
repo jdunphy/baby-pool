@@ -19,11 +19,17 @@ h3 {font-size:1.5em;line-height:1;margin-bottom:.3em;
     float: left;
 }
 
-.guess-panel {
-    width: 400px;
+.left-container {
+    width: 425px;
+    float: left;
+}
+
+.left-container .panel {
+    float: none;
 }
 
 .previous-guessers {
+    float: left;
     width: 300px;
 }
 
@@ -31,7 +37,7 @@ h3 {font-size:1.5em;line-height:1;margin-bottom:.3em;
     width: 350px;
 }
 
-.clear { clear: both }
+.clear { clear: both; line-height: 0em; }
 
 .row { line-height: 1.8em; }
 

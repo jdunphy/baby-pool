@@ -28,13 +28,18 @@
           %li Winner takes ALL! (insert dramatic music here)
       .clear &nbsp;
 
-      .guess-panel.panel
-        %h3 Take a guess!
+      .left-container
+        .guess-panel.panel
+          %h3 Take a guess!
       
-        - if @guess
-          = haml :error_form, :layout => false
-        - else
-          = haml :new_form, :layout => false
+          - if @guess
+            = haml :error_form, :layout => false
+          - else
+            = haml :new_form, :layout => false
+        .previous-guessers.panel
+          Got questions or problems?  Did I do something silly and make a busted website?  Email me!
+          %br
+          jacob (dot) dunphy (at) gmail.com
 
       .previous-guessers.panel
         %h3 Who has already guessed?
@@ -42,7 +47,3 @@
           - @guesses.each do |guess|
             %li= guess.name
     
-      .previous-guessers.panel
-        Got questions or problems?  Did I do something silly and make a busted website?  Email me!
-        %br
-        jacob (dot) dunphy (at) gmail.com
