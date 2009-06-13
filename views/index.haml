@@ -30,12 +30,10 @@
 
       .left-container
         .guess-panel.panel
-          %h3 Take a guess!
-      
-          - if @guess
-            = haml :error_form, :layout => false
-          - else
-            = haml :new_form, :layout => false
+          %h3 Voting has closed!
+          %p 
+            The day approaches, and we've closed the pool.
+            We'll update the site again once we have a winner!
         .previous-guessers.panel
           Got questions or problems?  Did I do something silly and make a busted website?  Email me!
           %br
