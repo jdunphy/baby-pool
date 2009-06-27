@@ -21,7 +21,7 @@ class BabyPool < Sinatra::Base
   end
 
   get '/' do
-    @guesses = Guess.order(:created_at.desc).all
+    @guesses = Guess.order(:birth_date.asc).all
     haml :index
   end
   

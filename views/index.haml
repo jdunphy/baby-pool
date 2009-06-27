@@ -8,40 +8,39 @@
     .main
       %h1 The Official Elliot James Dunphy Pool
       .panel.top
-        %h3 What do I do?
-        %ol
-          %li 
-            %a{:href => "http://www.flickr.com/photos/57179629@N00/sets/72157618803263336/"} Go do some research
-            (Est. due date: 07/09/09)
-          %li Guess when Elliot will be born
-          %li 
-            Mail us two bucks per entry
-            %a{:href => "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5719552"}Paypal Works Too!
-          %li Wait...
-          %li Win??
+        %h3 The guesses
+        %table
+          %tr
+            %th Guesser
+            %th Birth Date
+            %th Weight
+          - @guesses.each do |guess|
+            %tr
+              %td= guess.name
+              %td= guess.birth_date.strftime('%m/%d')
+              %td 
+                = guess.pounds.to_i 
+                lbs,
+                = guess.ounces.to_i
+                oz
+
       .panel.top
+        %h3 Voting has closed!
+        %p 
+          The day approaches, and we've closed the pool.
+          We'll update the site again once we have a winner!
+
         %h3 What are the rules?
         %ul
           %li Each day that your guess is off by is one point.
           %li Each ounce that your guess is off by is one point.
           %li The guesser with the lowest points gets the sweet, sweet cash.
           %li Winner takes ALL! (insert dramatic music here)
-      .clear &nbsp;
 
-      .left-container
-        .guess-panel.panel
-          %h3 Voting has closed!
-          %p 
-            The day approaches, and we've closed the pool.
-            We'll update the site again once we have a winner!
-        .previous-guessers.panel
-          Got questions or problems?  Did I do something silly and make a busted website?  Email me!
-          %br
-          jacob (dot) dunphy (at) gmail.com
+
 
       .previous-guessers.panel
-        %h3 Who has already guessed?
-        %ul
-          - @guesses.each do |guess|
-            %li= guess.name
+        Got questions or problems?  Did I do something silly and make a busted website?  Email me!
+        %br
+        jacob (dot) dunphy (at) gmail.com
     
